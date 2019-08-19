@@ -45,3 +45,12 @@ while True:
   
   time.sleep(60)
 ```
+
+Want to quickly check which API keys that are stored in the API_KEYS_LST work and which don't?
+
+```
+import ytvd
+
+ytvd.test_api_keys()
+```
+
