@@ -181,15 +181,18 @@ class ytvd():
 			if 'statistics' in items:
 				statistics = items['statistics']
 				self.views = int(statistics['viewCount'])
-				if 'likes' in statistics:
+				if 'likeCount' in statistics:
 					self.likes = int(statistics['likeCount'])
 				else:
 					self.likes = None
-				if 'dislikes' in statistics:
+				if 'dislikeCount' in statistics:
 					self.dislikes = int(statistics['dislikeCount'])
 				else:
 					self.dislikes = None
-				self.comments = int(statistics['commentCount'])
+				if 'commentCount' in statistics:
+					self.comments = int(statistics['commentCount'])
+				else:
+					self.comments = None
 			if 'contentDetails' in items:
 				contentdetails = items['contentDetails']
 				#duration gives a little bit of problems due to weird formatting :'D
